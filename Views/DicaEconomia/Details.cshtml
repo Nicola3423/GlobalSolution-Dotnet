@@ -1,0 +1,17 @@
+﻿@model Sessions_app.DTOs.DicaEconomiaDTO
+
+@{
+    ViewData["Title"] = "Detalhes da Dica de Economia";
+}
+
+<h1 class="mb-4">Detalhes da Dica de Economia</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Título: @Model.Titulo</h5>
+        <p class="card-text">Descrição: @Model.Descricao</p>
+        <p class="card-text">Data de Publicação: @Model.DataPublicacao.ToString("dd/MM/yyyy")</p>
+        <a href="@Url.Action("Edit", new { id = Model.DicaId })" class="btn btn-primary">Editar</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

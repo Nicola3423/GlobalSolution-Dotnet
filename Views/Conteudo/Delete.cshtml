@@ -1,0 +1,24 @@
+﻿@model Sessions_app.DTOs.ConteudoDTO
+
+@{
+    ViewData["Title"] = "Excluir Conteúdo";
+}
+
+<h1 class="mb-4">Excluir Conteúdo</h1>
+
+<div class="alert alert-danger" role="alert">
+    Tem certeza de que deseja excluir este conteúdo?
+</div>
+
+<div>
+    <h5>Título: @Model.Titulo</h5>
+    <p>Descrição: @Model.Descricao</p>
+    <p>Tipo: @Model.Tipo</p>
+    <p>Data de Publicação: @Model.DataPublicacao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="ConteudoId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

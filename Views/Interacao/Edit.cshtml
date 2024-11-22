@@ -1,0 +1,33 @@
+﻿@model Sessions_app.DTOs.InteracaoDTO
+
+@{
+    ViewData["Title"] = "Editar Interação";
+}
+
+<h1 class="mb-4">Editar Interação</h1>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="InteracaoId" type="hidden" />
+    <div class="mb-3">
+        <label for="UsuarioId" class="form-label">ID do Usuário</label>
+        <input asp-for="UsuarioId" class="form-control" required />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="ConteudoId" class="form-label">ID do Conteúdo</label>
+        <input asp-for="ConteudoId" class="form-control" required />
+        <span asp-validation-for="ConteudoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="TipoInteracao" class="form-label">Tipo de Interação</label>
+        <input asp-for="TipoInteracao" class="form-control" required />
+        <span asp-validation-for="TipoInteracao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataInteracao" class="form-label">Data da Interação</label>
+        <input asp-for="DataInteracao" type="date" class="form-control" required />
+        <span asp-validation-for="DataInteracao" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

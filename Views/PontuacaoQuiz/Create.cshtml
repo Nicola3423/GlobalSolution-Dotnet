@@ -1,0 +1,37 @@
+﻿@model Sessions_app.DTOs.PontuacaoQuizDTO
+
+@{
+    ViewData["Title"] = "Adicionar Pontuação de Quiz";
+}
+
+<h1>Adicionar Pontuação</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="PontuacaoId" class="form-label">ID da Pontuação</label>
+        <input asp-for="PontuacaoId" class="form-control" />
+        <span asp-validation-for="PontuacaoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="UsuarioId" class="form-label">ID do Usuário</label>
+        <input asp-for="UsuarioId" class="form-control" />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="QuizId" class="form-label">ID do Quiz</label>
+        <input asp-for="QuizId" class="form-control" />
+        <span asp-validation-for="QuizId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="Pontuacao" class="form-label">Pontuação</label>
+        <input asp-for="Pontuacao" class="form-control" />
+        <span asp-validation-for="Pontuacao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataParticipacao" class="form-label">Data de Participação</label>
+        <input asp-for="DataParticipacao" type="date" class="form-control" />
+        <span asp-validation-for="DataParticipacao" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

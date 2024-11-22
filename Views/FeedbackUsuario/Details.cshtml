@@ -1,0 +1,18 @@
+﻿@model Sessions_app.DTOs.FeedbackUsuarioDTO
+
+@{
+    ViewData["Title"] = "Detalhes do Feedback";
+}
+
+<h1 class="mb-4">Detalhes do Feedback</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">ID do Usuário: @Model.UsuarioId</h5>
+        <h5 class="card-title">ID do Conteúdo: @Model.ConteudoId</h5>
+        <p class="card-text">Mensagem: @Model.Mensagem</p>
+        <p class="card-text">Data: @Model.DataFeedback.ToString("dd/MM/yyyy")</p>
+        <a href="@Url.Action("Edit", new { id = Model.FeedbackId })" class="btn btn-primary">Editar</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

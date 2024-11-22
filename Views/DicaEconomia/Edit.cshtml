@@ -1,0 +1,28 @@
+﻿@model Sessions_app.DTOs.DicaEconomiaDTO
+
+@{
+    ViewData["Title"] = "Editar Dica de Economia";
+}
+
+<h1 class="mb-4">Editar Dica de Economia</h1>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="DicaId" type="hidden" />
+    <div class="mb-3">
+        <label for="Titulo" class="form-label">Título</label>
+        <input asp-for="Titulo" class="form-control" required />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="Descricao" class="form-label">Descrição</label>
+        <textarea asp-for="Descricao" class="form-control"></textarea>
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataPublicacao" class="form-label">Data de Publicação</label>
+        <input asp-for="DataPublicacao" type="date" class="form-control" required />
+        <span asp-validation-for="DataPublicacao" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,24 @@
+﻿@model Sessions_app.DTOs.InteracaoDTO
+
+@{
+    ViewData["Title"] = "Excluir Interação";
+}
+
+<h1 class="mb-4">Excluir Interação</h1>
+
+<div class="alert alert-danger" role="alert">
+    Tem certeza de que deseja excluir esta interação?
+</div>
+
+<div>
+    <h5>ID do Usuário: @Model.UsuarioId</h5>
+    <h5>ID do Conteúdo: @Model.ConteudoId</h5>
+    <p>Tipo de Interação: @Model.TipoInteracao</p>
+    <p>Data da Interação: @Model.DataInteracao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="InteracaoId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

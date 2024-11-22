@@ -1,0 +1,18 @@
+﻿@model Sessions_app.DTOs.InteracaoDTO
+
+@{
+    ViewData["Title"] = "Detalhes da Interação";
+}
+
+<h1 class="mb-4">Detalhes da Interação</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">ID do Usuário: @Model.UsuarioId</h5>
+        <h5 class="card-title">ID do Conteúdo: @Model.ConteudoId</h5>
+        <p class="card-text">Tipo de Interação: @Model.TipoInteracao</p>
+        <p class="card-text">Data da Interação: @Model.DataInteracao.ToString("dd/MM/yyyy")</p>
+        <a href="@Url.Action("Edit", new { id = Model.InteracaoId })" class="btn btn-primary">Editar</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

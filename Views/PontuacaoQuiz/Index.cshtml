@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sessions_app.DTOs.PontuacaoQuizDTO>
+
+@{
+    ViewData["Title"] = "Pontuações de Quiz";
+}
+
+<h1 class="mb-4">Lista de Pontuações</h1>
+
+<a href="@Url.Action("Create")" class="btn btn-success mb-3">Adicionar Pontuação</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID do Usuário</th>
+            <th>ID do Quiz</th>
+            <th>Pontuação</th>
+            <th>Data de Participação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pontuacao in Model)
+        {
+            <tr>
+                <td>@pontuacao.PontuacaoId</td>
+                <td>@pontuacao.UsuarioId</td>
+                <td>@pontuacao.QuizId</td>
+                <td>@pontuacao.Pontuacao</td>
+                <td>@pontuacao.DataParticipacao.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = pontuacao.PontuacaoId })" class="btn btn-info btn-sm">Detalhes</a>
+                    <a href="@Url.Action("Edit", new { id = pontuacao.PontuacaoId })" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="@Url.Action("Delete", new { id = pontuacao.PontuacaoId })" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

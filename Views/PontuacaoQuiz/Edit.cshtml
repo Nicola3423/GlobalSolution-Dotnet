@@ -1,0 +1,33 @@
+﻿@model Sessions_app.DTOs.PontuacaoQuizDTO
+
+@{
+    ViewData["Title"] = "Editar Pontuação de Quiz";
+}
+
+<h1 class="mb-4">Editar Pontuação</h1>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="PontuacaoId" type="hidden" />
+    <div class="mb-3">
+        <label for="UsuarioId" class="form-label">ID do Usuário</label>
+        <input asp-for="UsuarioId" class="form-control" required />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="QuizId" class="form-label">ID do Quiz</label>
+        <input asp-for="QuizId" class="form-control" required />
+        <span asp-validation-for="QuizId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="Pontuacao" class="form-label">Pontuação</label>
+        <input asp-for="Pontuacao" class="form-control" required />
+        <span asp-validation-for="Pontuacao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataParticipacao" class="form-label">Data de Participação</label>
+        <input asp-for="DataParticipacao" type="date" class="form-control" required />
+        <span asp-validation-for="DataParticipacao" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

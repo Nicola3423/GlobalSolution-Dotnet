@@ -1,0 +1,38 @@
+﻿@model Sessions_app.DTOs.FeedbackUsuarioDTO
+
+
+@{
+    ViewData["Title"] = "Adicionar Feedback";
+}
+
+<h1>Adicionar Feedback</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="FeedbackId" class="form-label">ID do Feedback</label>
+        <input asp-for="FeedbackId" class="form-control" />
+        <span asp-validation-for="FeedbackId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="UsuarioId" class="form-label">ID do Usuário</label>
+        <input asp-for="UsuarioId" class="form-control" />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="ConteudoId" class="form-label">ID do Conteúdo</label>
+        <input asp-for="ConteudoId" class="form-control" />
+        <span asp-validation-for="ConteudoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="Mensagem" class="form-label">Mensagem</label>
+        <textarea asp-for="Mensagem" class="form-control"></textarea>
+        <span asp-validation-for="Mensagem" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataFeedback" class="form-label">Data do Feedback</label>
+        <input asp-for="DataFeedback" type="date" class="form-control" />
+        <span asp-validation-for="DataFeedback" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

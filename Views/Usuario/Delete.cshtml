@@ -1,0 +1,23 @@
+﻿@model Sessions_app.DTOs.UsuarioDTO
+
+@{
+    ViewData["Title"] = "Excluir Usuário";
+}
+
+<h1 class="mb-4">Excluir Usuário</h1>
+
+<div class="alert alert-danger" role="alert">
+    Tem certeza de que deseja excluir este usuário?
+</div>
+
+<div>
+    <h5>Nome: @Model.Nome</h5>
+    <p>Email: @Model.Email</p>
+    <p>Data de Cadastro: @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="UsuarioId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,18 @@
+﻿@model Sessions_app.DTOs.PontuacaoQuizDTO
+
+@{
+    ViewData["Title"] = "Detalhes da Pontuação de Quiz";
+}
+
+<h1 class="mb-4">Detalhes da Pontuação</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">ID do Usuário: @Model.UsuarioId</h5>
+        <h5 class="card-title">ID do Quiz: @Model.QuizId</h5>
+        <p class="card-text">Pontuação: @Model.Pontuacao</p>
+        <p class="card-text">Data de Participação: @Model.DataParticipacao.ToString("dd/MM/yyyy")</p>
+        <a href="@Url.Action("Edit", new { id = Model.PontuacaoId })" class="btn btn-primary">Editar</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

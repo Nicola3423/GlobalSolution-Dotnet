@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sessions_app.DTOs.InteracaoDTO>
+
+@{
+    ViewData["Title"] = "Interações";
+}
+
+<h1 class="mb-4">Lista de Interações</h1>
+
+<a href="@Url.Action("Create")" class="btn btn-success mb-3">Adicionar Interação</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID do Usuário</th>
+            <th>ID do Conteúdo</th>
+            <th>Tipo de Interação</th>
+            <th>Data da Interação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var interacao in Model)
+        {
+            <tr>
+                <td>@interacao.InteracaoId</td>
+                <td>@interacao.UsuarioId</td>
+                <td>@interacao.ConteudoId</td>
+                <td>@interacao.TipoInteracao</td>
+                <td>@interacao.DataInteracao.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = interacao.InteracaoId })" class="btn btn-info btn-sm">Detalhes</a>
+                    <a href="@Url.Action("Edit", new { id = interacao.InteracaoId })" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="@Url.Action("Delete", new { id = interacao.InteracaoId })" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

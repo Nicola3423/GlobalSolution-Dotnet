@@ -1,0 +1,36 @@
+﻿@model Sessions_app.DTOs.InteracaoDTO
+
+@{
+    ViewData["Title"] = "Adicionar Interação";
+}
+<h1>Adicionar Nova Interação</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="InteracaoId" class="form-label">ID da Interação</label>
+        <input asp-for="InteracaoId" class="form-control" />
+        <span asp-validation-for="InteracaoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="UsuarioId" class="form-label">ID do Usuário</label>
+        <input asp-for="UsuarioId" class="form-control" />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="ConteudoId" class="form-label">ID do Conteúdo</label>
+        <input asp-for="ConteudoId" class="form-control" />
+        <span asp-validation-for="ConteudoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="TipoInteracao" class="form-label">Tipo de Interação</label>
+        <input asp-for="TipoInteracao" class="form-control" />
+        <span asp-validation-for="TipoInteracao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="DataInteracao" class="form-label">Data da Interação</label>
+        <input asp-for="DataInteracao" type="date" class="form-control" />
+        <span asp-validation-for="DataInteracao" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

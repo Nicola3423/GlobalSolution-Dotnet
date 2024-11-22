@@ -1,0 +1,24 @@
+﻿@model Sessions_app.DTOs.FeedbackUsuarioDTO
+
+@{
+    ViewData["Title"] = "Excluir Feedback";
+}
+
+<h1 class="mb-4">Excluir Feedback</h1>
+
+<div class="alert alert-danger" role="alert">
+    Tem certeza de que deseja excluir este feedback?
+</div>
+
+<div>
+    <h5>ID do Usuário: @Model.UsuarioId</h5>
+    <h5>ID do Conteúdo: @Model.ConteudoId</h5>
+    <p>Mensagem: @Model.Mensagem</p>
+    <p>Data: @Model.DataFeedback.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="FeedbackId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

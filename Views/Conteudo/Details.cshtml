@@ -1,0 +1,18 @@
+﻿@model Sessions_app.DTOs.ConteudoDTO
+
+@{
+    ViewData["Title"] = "Detalhes do Conteúdo";
+}
+
+<h1 class="mb-4">Detalhes do Conteúdo</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Título: @Model.Titulo</h5>
+        <p class="card-text">Descrição: @Model.Descricao</p>
+        <p class="card-text">Tipo: @Model.Tipo</p>
+        <p class="card-text">Data de Publicação: @Model.DataPublicacao.ToString("dd/MM/yyyy")</p>
+        <a href="@Url.Action("Edit", new { id = Model.ConteudoId })" class="btn btn-primary">Editar</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>

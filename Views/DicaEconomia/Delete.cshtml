@@ -1,0 +1,23 @@
+﻿@model Sessions_app.DTOs.DicaEconomiaDTO
+
+@{
+    ViewData["Title"] = "Excluir Dica de Economia";
+}
+
+<h1 class="mb-4">Excluir Dica de Economia</h1>
+
+<div class="alert alert-danger" role="alert">
+    Tem certeza de que deseja excluir esta dica de economia?
+</div>
+
+<div>
+    <h5>Título: @Model.Titulo</h5>
+    <p>Descrição: @Model.Descricao</p>
+    <p>Data de Publicação: @Model.DataPublicacao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="DicaId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

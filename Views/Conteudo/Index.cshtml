@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sessions_app.DTOs.ConteudoDTO>
+
+@{
+    ViewData["Title"] = "Conteúdos";
+}
+
+<h1 class="mb-4">Lista de Conteúdos</h1>
+
+<a href="@Url.Action("Create")" class="btn btn-success mb-3">Criar Novo Conteúdo</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Data de Publicação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var conteudo in Model)
+        {
+            <tr>
+                <td>@conteudo.ConteudoId</td>
+                <td>@conteudo.Titulo</td>
+                <td>@conteudo.Descricao</td>
+                <td>@conteudo.Tipo</td>
+                <td>@conteudo.DataPublicacao.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = conteudo.ConteudoId })" class="btn btn-info btn-sm">Detalhes</a>
+                    <a href="@Url.Action("Edit", new { id = conteudo.ConteudoId })" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="@Url.Action("Delete", new { id = conteudo.ConteudoId })" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
