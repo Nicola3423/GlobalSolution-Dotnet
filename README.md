@@ -45,18 +45,6 @@ A plataforma GlobalSolution integra diferentes funcionalidades, oferecendo uma s
 - Banco de dados Oracle configurado.
 - Ferramenta de gerenciamento de banco de dados (como SQL Developer).
 
-### **Configuração do Banco de Dados**
-
-1. Configure o Oracle Database conforme o script fornecido no projeto.
-2. Atualize a string de conexão no arquivo `appsettings.json` com as credenciais e detalhes do banco:
-   ```json
-   {
-       "ConnectionStrings": {
-           "OracleConnection": "User Id=<usuario>;Password=<senha>;Data Source=<host>:<porta>/<servico>"
-       }
-   }
-   ```
-
 ### **Passos para Execução**
 
 1. Clone o repositório:
