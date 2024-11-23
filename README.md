@@ -17,6 +17,11 @@ O GlobalSolution é uma aplicação desenvolvida para gerenciamento eficiente de
 - **Código do Projeto**: [Repositório no GitHub](#)
 - **Documentação da API Swagger**: [Swagger UI](http://localhost:7055/api-docs)
 
+## **Integrantes do Grupo**
+- **Igor Akira | RM 554227 | Turma: 2TDSPS**: Desenvolvedor do código-fonte.
+- **Nicola Monte | RM 553991 | Turma: 2TDSPR**: Desenvolvedor do código-fonte.    
+- **Willyam Santos | RM 554244 | Turma: 2TDSZ**: Responsável pela documentação do projeto.
+
 ## **Problema**
 Organizações frequentemente enfrentam dificuldades em gerenciar informações de forma eficiente, seja por falta de sistemas estruturados ou pela dificuldade de engajar usuários em atividades como quizzes e feedbacks. O GlobalSolution foi projetado para resolver essas questões com uma interface robusta e intuitiva.
 
